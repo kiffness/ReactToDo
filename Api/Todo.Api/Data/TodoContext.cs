@@ -1,7 +1,7 @@
-using Api.Models;
 using Microsoft.EntityFrameworkCore;
+using Todo.Api.Models;
 
-namespace Api.Data;
+namespace Todo.Api.Data;
 
 public class TodoContext : DbContext
 {
@@ -10,5 +10,5 @@ public class TodoContext : DbContext
 
     }
 
-    public DbSet<Todo> Todos { get; set; }
+    public DbSet<TodoModel> Todos { get; set; }
 }

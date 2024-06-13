@@ -1,4 +1,6 @@
-using Api.Data;
+using Todo.Api.Data;
+using Todo.Api.Interfaces;
+using Todo.Api.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +18,8 @@ builder.Services.AddDbContext<TodoContext>(opt =>
 });
 
 builder.Services.AddCors();
+
+builder.Services.AddScoped<ITodoService, TodoService>();
 
 var app = builder.Build();
 

@@ -1,6 +1,6 @@
-namespace Api.Models;
+namespace Todo.Api.Models;
 
-public class Todo
+public class TodoModel
 {
     public string Id { get; set; } = Guid.NewGuid().ToString();
     public string Title { get; set; } = string.Empty;

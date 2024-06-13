@@ -1,6 +1,10 @@
-using Api.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Todo.Api.Models;
 
-namespace Api.Data;
+namespace Todo.Api.Data;
 
 public class DbInitializer
 {
@@ -8,29 +12,29 @@ public class DbInitializer
     {
         if (context.Todos.Any()) return;
 
-        var todos = new List<Todo>
+        var todos = new List<TodoModel>
         {
-            new Todo
+            new TodoModel
             {
                 Title = "Learn React",
             },
-            new Todo
+            new TodoModel
             {
                 Title = "Wash Dishes",
             },
-            new Todo
+            new TodoModel
             {
                 Title = "Do the washing",
             },
-            new Todo
+            new TodoModel
             {
                 Title = "Learn Typescript",
             },
-            new Todo
+            new TodoModel
             {
                 Title = "Go to work",
             },
-            new Todo
+            new TodoModel
             {
                 Title = "Brush teeth",
             },
