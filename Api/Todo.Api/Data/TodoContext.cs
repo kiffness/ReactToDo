@@ -10,5 +10,5 @@ public class TodoContext : DbContext
 
     }
 
-    public DbSet<TodoModel> Todos { get; set; }
+    public virtual DbSet<TodoModel> Todos { get; set; }
 }

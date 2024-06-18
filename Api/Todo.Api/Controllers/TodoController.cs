@@ -7,14 +7,10 @@ namespace Todo.Api.Controllers;
 
 public class TodoController : BaseApiController
 {
-    private readonly TodoContext _context;
-    private readonly ILogger<TodoController> _logger;
     private readonly ITodoService _todo;
 
-    public TodoController(TodoContext context, ILogger<TodoController> logger, ITodoService todo)
+    public TodoController(ITodoService todo)
     {
-        _context = context;
-        _logger = logger;
         _todo = todo;
     }
 
@@ -27,7 +23,7 @@ public class TodoController : BaseApiController
         {
             var todos = await _todo.Todos();
 
-            return todos;
+            return Ok(todos);
         }
         catch (Exception ex)
         {
